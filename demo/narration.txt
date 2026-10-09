@@ -1,0 +1,9 @@
+s1.png|PR Token Ledger. What did this pull request cost in AI, and was the model worth it? Today, nobody at Kikoff can answer that. Admins see company totals. Engineers see nothing.
+s2.png|But the data already exists. Every Claude Code and Codex response logs its model, its token counts, the working directory, and the git branch. PR Token Ledger reads only that metadata. No prompt or response text ever leaves your laptop.
+s3.png|Run ledger sync. It reads about fifty-six hundred responses, maps each working directory to a GitHub repo, and links usage to pull requests by branch. Directly when the branch matches, inferred when work on main led into a PR, and unattributed otherwise. Then it prices tokens at API list rates, and uploads.
+s4.png|One command posts the breakdown as a comment on the pull request. Here's my anomaly detection PR: eighty million tokens on Opus 5, ninety-seven percent cache hits, seventy-one dollars.
+shot_prs.png|The dashboard, private behind Twingate and GitHub sign-in, ranks your pull requests by cost. Twenty-six PRs, three hundred eighty-six dollars linked to them, and a median of seven sixty-two per merged PR.
+shot_pr.png|Drill into any PR to see cost by model, cache efficiency, cost per changed line, and every session that contributed.
+models.png|Now the surprising part. On the Models page, my median merged PR on Opus 5 cost thirteen dollars. On Opus five point five, it's three forty-one. About four times cheaper. That's the kind of answer that actually helps people choose a model.
+unattr.png|And it's honest about what it can't link. Ninety-five dollars, about a fifth of my usage, was work on master, outside a repo, or exploration that never shipped.
+s9.png|Next: run it in CI so every PR gets a comment, an opt-in team view, and admin sources for Cursor and Claude dot A I. PR Token Ledger. Know what your AI work costs.
